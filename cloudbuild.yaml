@@ -1,10 +1,10 @@
 steps: 
 - name: 'gcr.io/cloud-builders/go'
   args: ['install', 'hello']
-  env: ['GOPATH=./go-hpa']
+  env: ['GOPATH=./']
 
 - id:  'Rodando teste unitário'  
   name: 'gcr.io/cloud-builders/go'
   args: ['test', 'hello']
-  env: ['GOPATH=./go-hpa']
+  env: ['GOPATH=./']
 
