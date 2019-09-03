@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: go-hpa
+spec:
+ replicas: 3
+ template:
+    metadata:
+      labels:
+        app: app-go
+    spec:
+      containers:
+      - name: go-hpa
+        image: fabiobraga/go-hpa:latest
+        ports:
+        - containerPort: 80
+
+        resources:
+          requests:
+            cpu: "50m" # minimo
+          limits:
+            cpu: "100m"  
+  
